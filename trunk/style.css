@@ -1,0 +1,1469 @@
+/*
+Theme Name: WordPress Bandcamp Theme
+Theme URI: http://googlecode/
+Description: Bandcamp
+Version: 1.0
+Author: Various Artists
+Author URI: http://googlecode/
+Tags: blue, custom header, fixed width, two columns, widgets
+*/
+
+
+/***** YUI Fonts CSS begin ***********************/
+
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.1
+*/
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ */
+body {font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
+table {font-size:inherit;font:100%;}
+/**
+ * Bump up IE to get to 13px equivalent
+ */
+pre,code,kbd,samp,tt {font-family:monospace;*font-size:108%;line-height:100%;}
+
+/***** YUI Fonts CSS end *************************/
+
+
+
+
+	/* General styles */
+ body {
+	margin:0;
+	padding:0;
+	width:100%;
+	background:#dddddd;
+	min-width:600px;		/* Minimum width of layout - remove line if not required */
+					/* The min-width property does not work in old versions of Internet Explorer */
+	/*font-size:90%;*/
+}
+a {
+	color:#369;
+}
+a:hover {
+	color:#fff;
+	background:#369;
+	text-decoration:none;
+}
+h1, h2, h3 {
+	margin:.8em 0 .2em 0;
+	padding:0;
+}
+p {
+	margin:.4em 0 .8em 0;
+	padding:0;
+}
+img {
+	margin:10px 0 5px;
+}
+#header {
+	float:left;
+	width:100%;
+	padding:0;
+	margin:0;
+	/*border-bottom:1px solid #000;*/
+}
+#header p {
+	padding:.5em 15px	.2em 15px;
+	margin:0;
+}
+#header h1  {
+	padding:.2em 15px;
+	margin:0;
+}
+#header h2  {
+	padding:.2em 15px	.7em 15px;
+	margin:0;
+}
+#colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+	/*background:#ffd8b7;*/		/* Left column background colour */
+}
+#colmid {
+	float:left;
+	width:200%;
+	position:relative;
+	left:200px;
+	background:#fff;    	/* Centre column background colour */
+}
+#colright {
+	float:left;
+	width:100%;
+	position:relative;
+	left:50%;
+	margin-left:-300px;
+	/*background:#ff9;*/    	/* Right column background colour */
+}
+#col1wrap {
+	float:right;
+	width:50%;
+	position:relative;
+	right:100%;
+}
+#col1pad {
+	margin:0 35px 0 335px;
+	overflow:hidden;
+}
+#col1 {
+	width:100%;
+	overflow:hidden;
+}
+#col2 {
+	float:left;
+	width:200px;
+	position:relative;
+	margin-left:-50%;
+	left:100px;
+	overflow:hidden;
+}
+#col3 {
+	float:left;
+	width:100px;
+	position:relative;
+	/*left:15px;*/
+	overflow:hidden;
+}
+#footer {
+	clear:both;
+	float:left;
+	width:100%;
+	padding:0;
+	margin:0;
+	/*border-top:1px solid #000;*/
+}
+#footer p {
+	padding:.5em 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------- BEGIN trackpipe_basic.css --------------- */
+/* common trackpipe styles across all layouts, nothing page-specific in here */
+
+
+
+#pgHd, #pgBd, #pgFt {
+    font-size: 93%;
+}
+
+h2 {
+    font-size: 146.5%;
+}
+
+h3 {
+    font-size: 123.1%;
+}
+
+a, .pseudoLink, button {
+    color: #0687f5;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover, .pseudoLink:hover, button:hover {
+    text-decoration: underline;
+}
+
+button {
+    margin-right: 0.5em;
+    padding: 0.25em;
+    font-family: arial;
+    font-size: 150%;
+    text-align: center;
+    border: 1px solid silver;
+    background: white;
+}
+
+button.disabled {
+    background: #eee;
+    color: #888;
+}
+
+.ieLte7 button {
+    padding: 0.125em;
+}
+
+.ie6 .yui-button span.first-child {
+    padding-bottom: 1px; /* prevent cropping of bottom border */
+} 
+
+button div {
+    min-width: 4em;
+    white-space: nowrap;
+}
+
+.ieLte7 button div {
+    min-width: 3em;
+}
+
+img {
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    font-weight: bold;
+}
+
+td, th {
+    border-top: dotted #c8c8c8 1px;
+    border-bottom: dotted #c8c8c8 1px;
+    padding: 0.3em 0.5em;
+    text-align: left;
+    vertical-align: top;
+}
+
+.textInput {
+    width: 20em;
+    border: 1px solid gray;
+}
+
+p {
+    margin: 1em 0em;
+}
+
+ul, ol {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* Normalize left margin for radios/checkboxes; otherwise FF ends up
+   with a ragged left margin in some forms. */
+input[type="checkbox"], input[type="radio"] {
+    margin-left: 1px;
+}
+
+/* These form elements seem a bit high relative to surrounding
+   text in FF, so correct for it. It sure would be nice if 
+   vertical-align:middle did the trick, but that makes them
+   too low (at least in Windows). */
+.gecko input[type="checkbox"], .gecko input[type="radio"] {
+    position: relative;
+    top: 0.1em;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.horizNav {
+    list-style-type: none; 
+    margin: 0px;
+    padding: 0px;
+    white-space: nowrap; 
+}
+
+ul.horizNav li {
+    display: inline;
+    padding-left: 1.1ex;
+    padding-right: 0.5ex;
+}
+
+ul.horizNav li.first {
+    background-image: none;
+    padding-left: 0em;
+} 
+
+ul.horizNav li.navSelected {
+    font-weight: bold;
+} 
+
+ul.horizNavWithDivider li {
+    background-image: url(/img/gray_vert_line.png);
+    background-repeat: repeat-y;
+}
+
+/* used to visually hide text but keep it available for screen readers */    
+.hiddenAccess {
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
+}
+
+.alert {
+    display: none;
+    color: red;
+    font-size: 116%;
+    font-weight: bold;
+    margin: 0.4em 0em;
+}
+
+.alertActive {
+    display: block;
+}
+
+.good {
+    color: green;
+}
+
+.bad, .notable {
+    color: red;
+}
+
+dl.tableLayout {
+    margin-bottom:0px;
+}
+
+dl.tableLayout dt {
+    float: left;
+    clear: left;
+    width: 20ex; /* override this to control the width of the left 'column' */
+    margin: 0px;
+    padding-top: 0.45em; /* imperfect baseline alignment */
+    text-align: right;
+    color: #9C9C9C;
+    line-height: 1.1em;
+}
+
+dl.tableLayout dd {
+    float: left;
+    width: 70%; /* appears to prevent layout problems at large font sizes in FF */
+    margin: 0px;
+    padding: 0px 0px 10px 10px;
+    /*line-height: 1.8em;*/
+}
+
+dl.tableLayout dd p.footnote {
+    line-height: 1.4em;
+}
+
+dl.tableLayout dd p.alert {
+    margin: 0.3em 0em 0em;
+}
+
+.ieLte7 dl.tableLayout dd {
+    float: none;
+}  
+
+dl.tableLayout .newGroup {
+    margin-top: 1em;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.progress_outer {
+    height: .75em;
+    width: 200px;
+    border: 1px solid silver;
+    margin:0px auto;
+    text-align: left;
+}
+.progress_inner {
+    background: #429d2f;
+    height: .75em;
+    width: 0px;
+}
+
+.inline_player {
+    position: relative;
+    zoom: 1; /* IE 6 layout fix */
+}
+
+.inline_player td {
+    border: none;
+    padding: 2px;
+}
+
+.inline_player .playbutton {
+    background: url(/img/playpause.gif);
+    background-position: 50% 45px;
+    width: 47px;
+    height: 45px;
+}
+
+.inline_player .playing {
+    background-position: 50% 0px;
+}
+
+.inline_player .busy {
+    background: url(/img/playerbusy.gif);
+    background-position: 50% 50%;
+}
+
+.inline_player .prevbutton {
+    width: 17px;
+    height: 11px;
+    background: url(/img/nextprev.gif);
+    background-position: 0px 50%;
+}
+
+.inline_player .nextbutton {
+    position: relative;
+    width: 17px;
+    height: 11px;
+    background: url(/img/nextprev.gif);
+    background-position: 17px 50%;
+}
+
+.inline_player .track_info {
+    position: relative;
+    width: 284px;
+    /* space between the play button and track info needs
+     * to vary with font size or it starts to look weird
+     * with large fonts: */
+    margin-left: 0.3em;
+}
+
+.inline_player .title {
+}
+
+.inline_player .message {
+    text-align: right;
+    color: red;
+    position: absolute;
+    width: 290px;
+    left: 0px;
+}
+
+.inline_player .progbar_cell {
+    position: relative;
+}
+
+.inline_player .progbar {
+    position: relative;
+    height: 12px;
+    /* space between the play button and track info needs
+     * to vary with font size or it starts to look weird
+     * with large fonts: */
+    margin-left: 0.3em;
+}
+
+.inline_player .thumb {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 29px;
+    height: 13px;
+    overflow: hidden;  /* IE 6 fix */
+    background: url(/img/playbackhead.png);
+    cursor: pointer;
+}
+
+.inline_player .progbar_empty {
+    position: relative;
+    top: 2px;
+    width: 100%;
+    height: 7px;
+    overflow: hidden;  /* IE 6 fix */
+    border: 1px solid #d0d0d0;
+}
+
+.inline_player .progbar_fill {
+    background: #FFF797;
+    height: 100%;
+    width: 0px;
+}
+
+table#track_table .track_table{
+    width:100%
+}
+
+.track_table_alt {
+    position:relative;
+    width:408px;
+    left:-23px;
+}
+
+.track_list .track_number {
+    width: 15px;
+    text-align: right;
+}
+.track_number_alt {
+    width: 15px;
+    text-align: right;
+}
+
+.track_number_col {
+    width:15px;
+}
+.track_number_col_alt {
+    width:15px;
+}
+
+.track_list td {
+    padding: 3px 2px 2px;
+    vertical-align: top;
+    border-bottom:none;
+    border-top:none;
+}
+
+.track_list_td_alt {
+	border-bottom:none;
+	border-top:none;
+}
+
+.mac .track_list td {
+    padding-top: 4px; /* couldn't figure out another way to get the vertical text alignment right */
+}
+
+.track_list td.play_col {
+    padding: 2px 0px 2px 0px;
+    width:17px;
+   
+}
+.play_col_alt {
+    padding: 2px 0px 2px 0px;
+    width:17px;
+}
+
+.track_list .title {
+    width: 220px;
+}
+
+.track_list .time {
+    padding-left: 0.6em;
+    font-size: 85%;
+}
+
+.track_list .play_status {
+	display: inline-block;
+	height: 17px;
+	width: 17px;
+	background-image: url(/img/miniplaypause.gif);
+	background-repeat: no-repeat;
+	background-position: 100px 0px; /* hidden by default */
+}
+
+.track_list .info_link {
+	text-align: left;
+	width:25px;
+        visibility:hidden;
+	
+}
+.info_link_alt {
+    display:none; /*we may hide this info except on mouseover*/ 
+}
+
+.track_list .dl_link {
+	text-align: right;
+	width:83px;
+        visibility:hidden;
+}
+
+.dl_link_alt {
+ display:none;
+}
+
+.track_list .noplay {
+    color: red;
+}
+
+.track_list .current_track {
+    font-weight: bold;
+}
+
+.hiddenelem {
+    visibility: hidden;
+}
+
+.mouseovertrack {
+    /*background-color:#FFFFFF;
+    opacity:0.99;*/
+}
+
+.controlTip {
+    color:gray;
+}
+
+/* Used to hide content from JS-capable browsers that have JS deactivated, as well
+   as unknown browsers without JS for whatever reason. For browsers known to be
+   incapable or insufficient (C-grade), use the _use_script template variable instead.
+   Of course, this hiding method won't work in browsers that don't support CSS. */
+.withScript {
+    display: none;
+}
+.js div.withScript {
+    display: block;
+}
+
+.fieldHintWrapper {
+    position: relative;
+}
+
+.fieldHint {
+    color: gray;
+    position: absolute;
+    top: auto;
+    left: 0px;
+    width: 98%;
+    border: 0px solid transparent;
+    padding: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: none;
+	cursor:text;
+}
+
+.fieldHintActive .fieldHint {
+    display: inline;
+}
+
+.share_dialog .leftcolumn {
+    float: left;
+    width: 276px;
+    height: 383px;
+}
+
+.share_dialog .heading {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.share_dialog .sampleheader {
+    margin-bottom: 1em;
+}
+
+.share_dialog .leftcolumn .section {
+    margin: 14px;
+}
+
+.share_dialog .blather {
+    font-size: 12px;
+}
+
+.share_dialog #embedcode {
+    width: 227px;
+    height: 100px;
+}
+
+.share_dialog .divider {
+    float: left;
+    width: 2px;
+    height: 383px;
+    background: #888888;
+    position: relative;
+}
+
+.share_dialog .rightcolumn {
+    float: right;
+    width: 420px;
+    height: 383px;
+}
+
+.share_dialog .sampleplayer_tall{
+    float:right;
+}
+
+.share_dialog .samplecontext_tall {
+    float:left;
+    width: 250px;
+}
+
+.share_dialog .sampleplayer_wide {
+    margin-bottom: 14px;
+}
+
+.share_dialog .samplecontext_wide {
+}
+
+.share_dialog .colorSwatchHolder {
+    height: 20px;
+}
+
+.share_dialog .colorSwatch {
+    display:inline-block;
+    width: 45px;
+    height: 22px;
+    vertical-align: middle;
+    border: 1px solid grey;
+}
+
+.share_dialog .hexInput {
+    height:20px;
+    width: 6em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.share_dialog .code_box {
+    position:relative;
+    border:1px solid gray;
+    overflow-x:hidden;
+    clear:both;
+    width:398px;
+    margin:.35em 0em;
+	color:#333333;
+	padding-left:2px;
+}
+
+#popup_picker {
+    width: 195px;
+    height: 216px;
+    position: relative;
+}
+
+#popup_picker .swatches {
+    margin: 0px auto;
+    width: 100px;
+    border: 1px solid #cccccc;
+}
+
+#popup_picker .swatch {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+}
+
+.copytext_link_wrapper {
+	float:left;
+	margin-bottom:1.25em;
+}
+
+.copytext_target {
+    clear: both;
+}
+
+.copytext_highlight {
+    background:yellow;
+}
+
+.yuimenuitemlabel {
+	outline:none; /* safari/FF-only. the IE method is in the YUI menu docs, but i just don't think it's worth it */
+}
+
+.smallIcon {
+    display: inline-block;
+    height: 16px;
+    font-size: 16px;  /* for FF2 */
+    padding: 0px 8px; /* for FF2 */
+    background-image: url(/img/icon_strip.png);
+    background-repeat: no-repeat;
+    background-position: 16px 50%; /* hidden */
+    vertical-align: baseline;
+}
+
+.ieLte7 .smallIcon {
+    vertical-align: middle;
+}
+
+.sortIcon {
+    height: 8px;
+    font-size: 8px; /* for FF2 */
+    margin-left: 0.15em;
+}
+
+.ieLte7 .sortIcon {
+    margin-top: 1px; /* oy */
+}
+
+.iconLink {
+    text-decoration: none;
+}
+
+.sortIconDown   { background-position: 0px 50%;   }
+.sortIconUp     { background-position: -16px 50%; }
+
+.vis_container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+/* in IE6, hiding the flash object causes calls
+ * into it to stop working, so let's just make it 1x1
+ * instead */
+.ie6 .vis_container_hidden {
+    left: -1px;
+    top: -1px;
+    height: 1px;
+    width: 1px;
+    visibility: visible;
+}
+
+.vis_container_hidden {
+    height: 350px;
+    width: 350px;
+    visibility: hidden;
+}
+
+.ie6 .vis_container_visible {
+    left: 0px;
+    top: 0px;
+    height: 350px;
+    width: 350px;
+}
+
+.vis_container_visible {
+    visibility: visible;
+}
+
+/* throw whatever nasty styles you want in here and call Trackpipe.debug_test_embed_code() to see a simulation of your embed code on a page with hostile styles */
+.myspace_style_abuse {
+    font-size: 36px;
+    color: #ff0000;
+}
+
+/* ------------- BEGIN trackpipe_layout.css --------------- */
+/* Trackpipe styles for the shared page layout.
+   Styles specific to a single page should live in that page. */
+
+
+
+#pgHd, #pgFt {
+    width: 975px;
+    margin: 0px auto;
+    padding: 3px 0px;
+    color: white;
+    background: #848484;
+}
+
+#pgHd a, #pgFt a {
+    color: white;
+}
+
+#pgHd, #pgFt {
+    font-size: 100%;
+}
+
+#headerLogo {
+	width: 42px;
+	height: 13px;
+    margin: 1px 5px 0px 2px;
+	float: left;
+    background: url(/img/headerLogo2.png) no-repeat;	
+}
+
+.ie6 #headerLogo {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='/img/headerLogo2.png', sizingMethod='crop' );
+}
+
+#footerLogo {
+	width: 96px;
+	height: 15px;
+	margin: 2px 0px 0px 10px;
+	float: left;
+	background: url(/img/footerLogo.png) no-repeat;
+}
+
+.ie6 #footerLogo {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='/img/footerLogo.png', sizingMethod='crop' );
+}
+
+#customHeader {
+	width:975px;
+	min-height:40px;
+	position:relative;
+	margin:-45px -35px 20px -35px;
+}
+
+#customHeaderBlank {
+	width:973px;
+	height:120px;
+	border:1px dashed silver;
+	margin:-35px -35px 35px -35px;
+	background:white;
+	text-align:center;
+}	
+
+#headerDimensionsHint {
+	color:gray;
+	margin-top:5px;
+}
+
+#customHeaderBlank button {
+	margin-top:40px;
+	margin-right:0px;
+}
+
+#chUploadProgressWrapper, #taUploadProgressWrapper, #bgImageUploadProgress {
+	display:none;
+}
+
+#bgImageUploadHint {
+	color:gray;
+	font-size:85%;
+	padding-top:2px;
+}
+
+#customHeader button, .trackView #tralbumArt button, .gallery_item button {
+	font-size:93%;
+	font-weight:bold;
+	position: absolute;
+	right: 4px;
+	bottom: 7px;
+	margin: 0px;
+	width:2em;
+}
+
+#chUploadingLabel {
+	color:gray;
+	margin-top:50px;
+}
+
+#headerUploadProgress, #artUploadProgress {
+	margin-top:5px;
+}
+
+#pgBd {
+    width: 905px;
+    margin: 0px auto;
+    padding: 35px;
+    background: white;
+}
+
+.leftMiddleColumns {
+    width: 770px;
+    float: left;
+}
+
+.leftColumn {
+    width: 385px;
+    float: left;
+}
+
+.middleColumn {
+    float: right;
+}
+
+.rightColumn {
+    width: 100px;
+    float: right;
+}
+
+.rightColumn .title {
+    border-top: 1px solid #dddddd;
+    padding-top: 0.3em;
+    margin-bottom: 0.75em;
+    font-size: 1.2em;
+    color: #666666;
+}
+
+#siteNav {
+    float: left;
+}
+
+#userNav, #legal {
+    float: right;
+}
+
+#pgHd .horizNav, #pgFt .horizNav {
+    margin: 0px 1ex;
+}
+
+#pgHd .horizNav li.first {
+    font-weight: bold;
+}
+
+#welcome {
+    width: 70%;
+    margin: 0px auto 2em;
+    text-align: center;
+}
+
+#welcome h2, #welcome p, #welcome span {
+    font-size: 212%;
+}
+
+#welcome button {
+    font-size: 300%;
+    font-weight: bold;
+    background: #0687f5;
+    color: white;
+	margin-right:0px;
+}
+
+.loginSignupSwitch a {
+    font-weight: bold;
+}
+
+.thumbthumb {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+#discography {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#discography li {
+	margin-top:0em;
+    margin-bottom: 1.5em;
+}
+
+#discography .trackTitle {
+    margin: 0.5em 0em 0.2em;
+}
+
+#discography .trackYear {
+    font-size:85%;
+}
+
+.contactHeader {
+    font-size: 125%;
+	font-weight:bold;
+}
+
+#contactForm dl.tableLayout dt {
+    width: 12ex; /* override this to control the width of the left 'column' */
+}
+
+#contactForm .textInput {
+    width: 100%;
+}
+#contactForm .alert {
+    font-size: 100%;
+}
+
+#vizLinkWrapper {
+	margin-top:.5em;
+	width:350px;
+	font-size:108%;
+	text-align:right;
+}
+
+#pullQuote {
+	margin-top:1em;
+	font-weight:bold;
+	font-style:italic;
+	font-size:150%;
+	width:350px;
+	text-align:center;
+}
+
+.warningBadge {
+    font-size: 93%;
+    color: red;
+    padding: 0.2em 0.3em;
+    border: 1px solid red;
+    background: white;
+}
+
+.thumbthumb .warningBadge {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+dd.warningBadgeRow {
+    margin: 1em 0em;
+}
+
+.trackView dl {
+    margin: 0px;
+}
+
+.trackEdit dd {
+    margin: 0.7em 0em;    
+}
+
+.trackEdit textarea {
+    height: 3.7em;
+}
+
+.trackView #trackInfo dd {
+    margin-left: 0px;
+}
+
+.trackView #trackInfo dt {
+    margin-top: 1.5em;
+}
+
+.trackView #trackInfo ul {
+    padding: 0px;
+    list-style-type: none;
+}   
+
+.trackView #trackInfo ul ul {
+    padding-left: 1.5em;
+} 
+
+.trackView .tralbumCommands {
+    margin: 1.5em 0;
+}
+
+.trackView .tralbumCommands li {
+    margin: 1.5em 0;
+}
+
+.trackView .tralbumCommands h3, .trackView .tralbumCommands h4 {
+    margin: 0.2em 0;
+    font-weight: bold;
+    font-size: 145%;
+}
+
+/* download and package viewers */
+
+.trackView .buyItem .hd, .trackView .buyItem .bd, .trackView .buyItem .ft {
+    margin: 0.3em 0 0;    
+}
+
+.trackView .buyItemExtra {
+    font-size: 75%;
+}
+
+.trackView .buyItemNyp {
+    font-weight: normal;
+}
+
+.trackView .buyItemEdition {
+    font-size: 70%;
+    font-weight: normal;
+    margin-top: 0.3em;
+}
+
+.trackView .buyItemPackageTitle {
+    cursor: pointer;
+}
+
+.trackView .buyItemPackageTitle:hover {
+    text-decoration: underline;
+}
+
+/* end download and package viewers */
+
+.trackView .trackTitle {
+    font-family: trebuchet ms;
+    font-size: 250%;
+    font-weight: bold;
+    line-height: 0.97em;
+    margin: 0px 0px 0.2em;
+}
+
+.trackView .albumTitle {
+	margin-top:0px;
+}
+
+.trackView input.trackTitle {
+    width: 15em;
+    padding: 0.05em;
+    padding-left: 0.1em;
+	margin-left:0em;
+}
+
+.trackView .lyricsText {
+    font-family:arial,helvetica,clean,sans-serif;
+    font-size-adjust:none;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:1.231;
+    margin-left:0;
+}
+
+.tralbumData {
+	margin-top:1em;
+}
+
+.tralbumAbout {
+	font-style:italic;
+}
+
+.tralbumCredits {
+    font-size:85%;
+}
+
+.tralbumFeed {
+    font-size:85%;
+}
+
+.tralbumFeed img {
+    margin-bottom:-3px;
+	margin-right:2px;
+}
+
+.trackEdit .leftColumn {
+    width: 520px;
+    margin-left: 16px;
+}
+
+.trackEdit .rightColumn {
+    width: auto;
+    margin-right: 16px;
+}
+
+.trackEdit #otherDownloadControls {
+    margin-top: 1.5em;
+}
+
+.trackEdit #otherDownloadControls dt {
+    margin-top: 1em;
+}
+
+.trackEdit div.controlTip {
+    margin-top: 0.5em;
+    width: 34em;
+}
+
+.trackEdit #trackFile {
+    margin: 1em 0em;
+}
+
+.trackEdit #trackFileInfo {
+    font-size: 175%;
+}
+
+.trackEdit #trackUploadProgress, .shareDlgText {
+    font-size: 108%;
+    zoom: 1; /* fixes IE6 display glitch */
+}
+
+.trackEdit #trackUploadProgressLabel {
+    margin-top: 0.2em;
+}
+
+.trackEdit #releaseDate {
+    width: 12em;
+    padding-left: 0.2em;
+	margin-left:0.1em;
+}
+
+.textInput, .numberInput, .dateInput {
+    width: 30em;
+    border: 1px solid #9c9c9c;
+    margin: 0px;
+    padding: 0.3em;
+    font-family: verdana;
+    font-size: 100%;
+}
+
+#albumTitles {
+    width: 12em;
+}
+
+.numberInput {
+    width: 3.5em;
+    text-align: right;
+}
+
+.dateInput {
+    width: 7em;
+}
+
+.trackEdit .indent {
+    padding-left: 20px;
+}
+
+.trackEdit table.plain {
+    margin: 0 0 0.6em 0;
+}
+
+.trackEdit table.plain td {
+    border: none;
+    margin: 0;
+    padding: 0.05em 0.8em 0.05em 0;
+}
+
+.trackEdit #setPrice, .trackEdit #minPrice {
+	width:4em;
+	margin:0px 2px 0px 3px;
+	text-align: right;
+}
+
+.trackEdit #bdiUploadControls * {
+    padding-right: 0.8em;
+}
+
+.trackEdit #bdiUploadProgress {
+    display: none;
+}
+
+.trackEdit #bdiUploadProgress td {
+    vertical-align: middle;
+}
+
+.trackEdit .deleted .bdiFileName, .trackEdit .deleted .bdiSize, .package_summary .deleted {
+    text-decoration: line-through;
+}
+
+textarea {
+    overflow: auto;
+}
+
+.trackEdit .disabled label, .trackEdit .disabled .disableable {
+    color: gray;
+}
+
+.trackEdit .downloadControlsSection {
+    margin-top: 1em;
+}
+
+.trackEdit #bdiWrapper {
+    margin-top: 0.7em;
+}
+
+.trackEdit .downloadControls {
+	padding-left:15px;
+	padding-top:5px;
+}
+
+#paidDownloadEmailWrapper {
+    padding-left: 1.5em;
+}
+
+#lowPriceWarning {
+    margin-top: 0.5em;
+    margin-left: 1.8em;
+    margin-right: 5em;
+}
+
+#paidDownloadControls .alert {
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0.5em 0 0.7em;
+}
+
+.trackView #tralbumArt {
+    width: 350px;
+    height: 350px;
+	position:relative;
+}
+
+.trackView #tralbumArtBlank {
+    width: 350px;
+    height: 350px;
+	border:1px dashed silver;
+	background:white;
+	text-align:center;
+}
+
+#tralbumArtBlank button {
+	margin-top:140px;
+	margin-right:0px;
+}
+
+#taUploadingLabel {
+	color:gray;
+	margin-top:140px;
+}
+.trackView .inline_player {
+    margin: 1.5em 0em;
+}
+
+.trackView #editDeleteCommands {
+    margin-left: 0px;
+	margin-top:1em;
+}
+
+.trackView #editDeleteCommands button {
+    font-size: 100%;
+	background-color: lightyellow;
+}
+
+.trackView #editDeleteCommands li {
+    display: inline;
+}
+
+.trackView #saveCancelCommands {
+    margin: 2em 0em 1.5em 0em;
+}
+
+.trackView #saveCancelCommands li {
+    display: inline;
+}  
+
+#normalDownloadHint {
+    font-size: 66%;
+    font-weight: normal;
+    padding-left: 1px;
+	margin-bottom: 1em;
+}
+
+.trackEdit #trackUploadProgress .progress_outer {
+    width: 300px;
+    margin: 0px; /* uncenters */
+}
+
+.yui-skin-sam .yuimenu .topscrollbar, .yui-skin-sam .yuimenu .bottomscrollbar {
+    background-image: url(/jslib/yui/2.5.1/assets/skins/sam/sprite.png);
+}
+
+.yui-skin-sam .yui-menu-button button {
+    background-image:url(/img/menu-button-arrow.png);
+}
+
+.yui-skin-sam .yuimenuitem-hassubmenu {
+	background-image:url(/jslib/yui/2.5.1/assets/skins/sam/menuitem_submenuindicator.png);
+}
+
+.yui-skin-sam .yuimenuitem-checked {
+    background-image:url(/jslib/yui/2.5.1/assets/skins/sam/menuitem_checkbox.png);
+}
+
+/* for IE 8; can be removed when we upgrade YUI past 2.5.1 */
+.yui-menu-shadow-visible {
+    filter:alpha(opacity=12);
+}
+
+#shareLink, #vizLink, #vizLinkShareDialog {
+	background: url(/jslib/yui/2.5.1/button/assets/skins/sam/menu-button-arrow.png) no-repeat right 55%;
+	padding-right: 20px;
+}
+
+#shareLink {
+    margin-right: -6px; /* cinches up extra horiz space next to menu arrow */ 
+}
+
+
+#sharemenu, #vizmenu_container, #vizmenusharedialog_container {
+	font-size: 145%;
+	font-weight:bold;
+}
+
+#trackList tr {
+	cursor:move;
+}
+
