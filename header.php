@@ -9,12 +9,7 @@
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-
-
-
-<?php
-	echo '';
-?>
+<?php do_action('bandcamp_inline_css'); ?>
 
 
 <?php wp_head(); ?>
