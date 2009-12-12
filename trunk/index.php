@@ -66,13 +66,7 @@
 
 <div id="pgBd" class="yui-skin-sam">
  
-<div id="header">
-	<div id="customHeaderWrapper">
-		<div id="customHeader">
-			<a href="http://music.bff.site4fans.com"><img id="headerImage" src="http://bandcamp.com/files/18/73/187343940-1.png"/></a>
-		</div>
-	</div>
-</div>
+<?php do_action('bandcamp_headerimg'); ?>
 
 <div id="colmask">
 	<div id="colmid">

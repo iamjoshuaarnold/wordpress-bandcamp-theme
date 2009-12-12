@@ -1,7 +1,7 @@
 <?php
 
-$BandcampDomainName = 'demo';
-
+$BandcampDomainName = '';
+include_once(TEMPLATEPATH . '/BandcampContent/headerimage.php');
 
 if (!isset($BandcampDomainName) || $BandcampDomainName == '') {
 	include_once(TEMPLATEPATH . '/content/unconfigured.php');
