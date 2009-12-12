@@ -1,8 +1,7 @@
 <?php
 function bandcamp_demomode_leftside() {
 ?>
-
-<li id="search">
+<li id="trydemo">
    <label for="tryme"><?php _e('Try Me:'); ?></label>
    <form id="domainform" method="post" action="<?php bloginfo('home'); ?>">
 	<div>
@@ -10,9 +9,7 @@ function bandcamp_demomode_leftside() {
 		<input type="submit" value="<?php esc_attr_e('Go'); ?>" />
 	</div>
 	</form>
- </li>
-
-	
+</li>
 <?php
 }
 
