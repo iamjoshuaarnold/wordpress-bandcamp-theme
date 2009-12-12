@@ -46,11 +46,6 @@ pre,code,kbd,samp,tt {font-family:monospace;*font-size:108%;line-height:100%;}
 a {
 	color:#369;
 }
-a:hover {
-	color:#fff;
-	background:#369;
-	text-decoration:none;
-}
 h1, h2, h3 {
 	margin:.8em 0 .2em 0;
 	padding:0;
@@ -205,7 +200,7 @@ a, .pseudoLink, button {
 }
 
 a:hover, .pseudoLink:hover, button:hover {
-    /*text-decoration: underline;*/
+    text-decoration: underline;
 }
 
 button {

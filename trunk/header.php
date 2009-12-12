@@ -3,21 +3,48 @@
 
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+    <title>BFF</title>
+    
+    <meta name="Description" content=""/>
+    
+    <link rel="shortcut icon" href="http://bandcamp.com/files/33/90/3390512577-1.jpg"/>
+	<meta name="title" content="The Mossy Rock Album, by BFF" />
+        <meta name="description" content=""/>
+        
+        <link rel="image_src" href="http://bandcamp.com/files/33/90/3390512577-1.jpg" />
+        
+    
+     
 
-<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+     
+      
+    
+    <!--
+    <link type="text/css" rel="stylesheet" href="http://bandcamp.com/tmpdata/cache/container_0b31041f2e820c868a4022570db1a41f.css" >
+	-->
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+  
 
-<?php do_action('bandcamp_inline_css'); ?>
-
-
-<?php wp_head(); ?>
+        
+            <link rel="alternate" type="application/rss+xml"  title="BFF"  href="/feed" />
+            
+                <link rel="alternate" type="application/rss+xml"  title="BFF: The Mossy Rock Album"  href="/feed/album/the-mossy-rock-album" />
+            
+            
+        
+    
 
 </head>
-
 <body class="gecko">
-	<div id="pgBd" class="yui-skin-sam">
-		<div id="customHeaderWrapper">
-		</div>
+<div id="pgBd" class="yui-skin-sam">
+ 
+<?php do_action('bandcamp_headerimg'); ?>
+<!--
+http://matthewjamestaylor.com/blog/holy-grail-no-quirks-mode.htm
+-->
+<div id="colmask">
+	<div id="colmid">
+		<div id="colright">
 
