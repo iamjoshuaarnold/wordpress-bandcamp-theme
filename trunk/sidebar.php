@@ -1,17 +1,21 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Default_Theme
- */
-?>
 	<div id="sidebar" role="complementary">
 		<ul>
 			<?php do_action('bandcamp_leftside'); ?>
 			<?php 	/* Widgetized sidebar, if you have the plugin installed. */
 					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+		
+			
 			<li>
-				<?php get_search_form(); ?>
-			</li>
+				<form role="search" method="get" id="searchform" action="http://bandcamp.au.dev.ind-web.com/" >
+
+	<div><label class="hiddenAccess" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" size="10"/><input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form>			</li>
+			
+			
+
+		
 
 			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
 			<li><h2>Author</h2>
