@@ -2,11 +2,15 @@
 function bandcamp_demomode_leftside() {
 ?>
 <li id="trydemo">
-   <label for="tryme"><?php _e('Try Me:'); ?></label>
    <form id="domainform" method="post" action="<?php bloginfo('home'); ?>">
 	<div>
-		<input type="text" name="BandcampDomain" id="BandcampDomain" size="15" /><br />
+		<label for="BandcampDomain"><?php _e('Enter your Bandcamp domain:'); ?></label>
+		<input type="text" name="BandcampDomain" id="BandcampDomain" size="15" />
+		<br />
 		<input type="submit" value="<?php esc_attr_e('Go'); ?>" />
+		<input type="button" value="<?php esc_attr_e('Reset'); ?>" />
+		<br />
+		*not working yet!
 	</div>
 	</form>
 </li>
