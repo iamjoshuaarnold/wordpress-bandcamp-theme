@@ -170,11 +170,14 @@ img {
 #sidebar ul li #domainform {
 	text-align: center;
 	padding: 10px 0;
-	/* note, this colour should be parsed from #pgFt */
+	color: #ffffff;
 	background-color: #629CAC; 
 }
 
-
+#sidebar ul li #domainform h2 {
+	margin: 0;
+	padding: 0;
+}
 
 
 
