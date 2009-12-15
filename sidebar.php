@@ -1,19 +1,20 @@
-	<div id="sidebar" role="complementary">
-		<ul>
-			<?php do_action('bandcamp_leftside'); ?>
+<div id="sidebar" role="complementary">
+	<ul>
+			
 			<?php 	/* Widgetized sidebar, if you have the plugin installed. */
 					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
 		
 			
-			<li>
-				<form role="search" method="get" id="searchform" action="http://bandcamp.au.dev.ind-web.com/" >
-
-	<div><label class="hiddenAccess" for="s">Search for:</label>
-	<input type="text" value="" name="s" id="s" size="10"/><input type="submit" id="searchsubmit" value="Search" />
-	</div>
-	</form>			</li>
+		<li>
+			<form role="search" method="get" id="searchform" action="http://bandcamp.au.dev.ind-web.com/" >
+				<div>
+					<label class="hiddenAccess" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" size="10"/><input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form>
+		</li>
 			
-			
+<?php do_action('bandcamp_leftside'); ?>	
 
 		
 

@@ -3,12 +3,13 @@
 $BandcampDomainName = '';
 include_once(TEMPLATEPATH . '/BandcampContent/headerimage.php');
 
-if (!isset($BandcampDomainName) || $BandcampDomainName == '') {
-	include_once(TEMPLATEPATH . '/content/unconfigured.php');
-} elseif ($BandcampDomainName === 'demo') {
-	include_once(TEMPLATEPATH . '/content/demomode.php');
-} else {
 
+if (BC_DEMO_SITEURL == get_bloginfo('siteurl')) {
+	include_once(TEMPLATEPATH . '/content/demomode.php');
+} elseif (!isset($BandcampDomainName) || $BandcampDomainName == '') {
+	include_once(TEMPLATEPATH . '/content/unconfigured.php');
+} else {
+	// include_once(TEMPLATEPATH . '/content/unconfigured.php');
 
 // This should be loaded if we do not have a stored array or need to
 // refetch the bandcamp html
