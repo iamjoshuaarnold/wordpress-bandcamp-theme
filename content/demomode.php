@@ -3,8 +3,6 @@
 define( 'DONOTCACHEPAGE', true);
 
 
-//print_r($_POST);
-
 // Set domain name
 if (isset($_POST['BandcampDomain'])) {
 	$BandcampDomainName = $_POST['BandcampDomain'];
