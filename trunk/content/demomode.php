@@ -3,9 +3,44 @@
 define( 'DONOTCACHEPAGE', true);
 
 
-// Set domain name
-//if ($_POST['BandcampDomain'])
+//print_r($_POST);
 
+// Set domain name
+if (isset($_POST['BandcampDomain'])) {
+	$BandcampDomainName = $_POST['BandcampDomain'];
+	if (false === ($bandcamp_html = bandcamp_demomode_check($BandcampDomainName))) {
+		add_action('bandcamp_content', 'bandcamp_demomode_error');
+	} else {
+		// print_r($bandcamp_html);
+	}
+}
+
+function bandcamp_demomode_check($BandcampDomainName) {
+	$blacklist = array(
+		'bandcamp.com', 'dom.bandcamp.com'
+		);
+	if (in_array($BandcampDomainName,$blacklist)) return false;
+	
+	$bcip = gethostbyname('dom.bandcamp.com');
+	$urip = gethostbyname($BandcampDomainName);
+	
+	if ($bcip != $urip) return false;
+
+//echo $urip;
+include_once(TEMPLATEPATH . '/classes/GETDocument.php');
+	$get = new GETDocument($BandcampDomainName);
+	return $get->get_html($BandcampDomainName);
+
+}
+
+
+
+
+function bandcamp_demomode_error() {
+	echo '
+		<p class="alert alertActive">ERROR: Invalid Bandcamp domain name, please try again!</p>
+	';
+}
 
 
 
