@@ -1,4 +1,15 @@
 <?php
+// disable wp-supercache for the demo
+define( 'DONOTCACHEPAGE', true);
+
+
+// Set domain name
+//if ($_POST['BandcampDomain'])
+
+
+
+
+
 function bandcamp_demomode_leftside() {
 ?>
 <li id="trydemo">
