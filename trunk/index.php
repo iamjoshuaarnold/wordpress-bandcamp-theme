@@ -49,7 +49,7 @@
 			</div>
 			<div id="col3">
 				<!-- Column 3 start -->
-					Bandcamp discography here
+					<?php do_action('bandcamp_rightside'); ?>
 				<!-- Column 3 end -->
 
 			</div>
