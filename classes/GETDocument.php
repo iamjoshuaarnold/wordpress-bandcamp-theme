@@ -1,21 +1,30 @@
 <?php
 class GETDocument {
-
+	private $BlackList = array();
+	private $DomainName;
 	public $html;
 
 
-public function __construct($BandcampDomainName) {
+public function __construct($DomainName, $BlackList) {
+	$this->DomainName = $DomainName;
+	$this->BlackList = $BlackList;
+}
+
+private function check_BlackList() {
+
+	if (in_array($this->DomainName,$this->BlackList)) return false;
 	
+	// these should be cached on your server when used (standard DNS rules)
+	$bcip = gethostbyname('dom.bandcamp.com');
+	$urip = gethostbyname($this->DomainName);
 	
+	// we could store these but would need a timeout just in case
+	if ($bcip != $urip) return false; 
 }
 
 
 
-
-
-
-
-public function get_html($BandcampDomainName) {
+public function html($BandcampDomainName) {
 	$headerendfound = false;
 
 	#ok, this is self explanitory
@@ -45,6 +54,7 @@ public function get_html($BandcampDomainName) {
 				# header end is found - so spit out what we get to file and browser
 				//fwrite($fp, $out);
 				//print $out;
+				$buffer .= $out;
 				
 			}
 			if (!$headerendfound) {
@@ -67,7 +77,7 @@ public function get_html($BandcampDomainName) {
 					if ($headers['status'] !== 'HTTP/1.1 200 OK') {
 						//header("Status: 404 Not Found");
 						//header("Live-Fetch-Error:" . $headers['status']);
-						//echo '--- 404';
+						echo '--- 404';
 						fclose($socket);
 						return false;
 					}
@@ -88,6 +98,7 @@ public function get_html($BandcampDomainName) {
 			}
 		}
 	}
+	return $buffer;
 	//fclose($fp);
 	fclose($socket);
 }
@@ -113,5 +124,6 @@ private function http_parse_headers($headers=false){
 
 
 } // end of GETDocument class
+
 
 ?>
