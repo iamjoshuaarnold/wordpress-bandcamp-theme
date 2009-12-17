@@ -1003,19 +1003,20 @@ table#track_table .track_table{
 .middleColumn {
     float: right;
 }
-
 .rightColumn {
     width: 100px;
     float: right;
 }
 
 .rightColumn .title {
-    border-top: 1px solid #dddddd;
-    padding-top: 0.3em;
-    margin-bottom: 0.75em;
     font-size: 1.2em;
-    color: #666666;
+    font-weight: normal;
+    border-top: 1px solid #dddddd;
+    margin: 0 0 0.75em;
+    padding: 0.3em 0 2px;
 }
+
+
 
 #siteNav {
     float: left;
@@ -1061,7 +1062,7 @@ table#track_table .track_table{
     position: relative;
 }
 
-#discography {
+#discography ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
@@ -1072,6 +1073,10 @@ table#track_table .track_table{
     margin-bottom: 1.5em;
 }
 
+#discography.truncated li.extra {
+    display: none;
+}
+
 #discography .trackTitle {
     margin: 0.5em 0em 0.2em;
 }
@@ -1079,6 +1084,12 @@ table#track_table .track_table{
 #discography .trackYear {
     font-size:85%;
 }
+
+#discography .showMore {
+    margin: 20px 0px; 
+    font-weight: bold;
+}
+
 
 .contactHeader {
     font-size: 125%;
