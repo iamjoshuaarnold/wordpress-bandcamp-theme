@@ -17,7 +17,7 @@ $rightside = <<< EOF
 <div id="rightColumn" class="rightColumn">
 	<div id="discography">
 		<h3 class="title">Useful Links</h3>
-		<ul title="Get Involved at Google Code">
+		<ul title="Useful Links">
 			<li>
 				<div>
 					<div class="thumbthumb">
