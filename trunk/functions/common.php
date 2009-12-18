@@ -55,10 +55,20 @@ function Bandcamp_create_Theme($BandcampDomainName) {
 				$oer = error_reporting(0); //turn off errors
 				$bandcamp_dom->loadHTML($bandcamp_get->html($BandcampDomainName));
 				error_reporting($oer); // restore errors
+				//header('Content Type: text/plain');
+				//$body = $bandcamp_dom->getElementsByTagName('style')->item(0);
+    //$detail  = $details->item(0)->nodeValue;
+				
+				//echo '<pre>';
+				//$body = $bandcamp_dom->getElementsByTagName('style');
+				//print_r($bandcamp_dom->dom_dump($body));
+				// echo '</pre>';
+				//exit;
 			}
 		}
 	}
 	// Do page
+	include_once(TEMPLATEPATH . '/BandcampContent/htmlhead.php');
 	include_once(TEMPLATEPATH . '/BandcampContent/headerimage.php');
 	include_once(TEMPLATEPATH . '/BandcampContent/rightside.php');
 }
@@ -68,5 +78,13 @@ function bandcamp_error_msg($error) {
 	//if ($BandcampMsg->error) {
 	echo '<p class="alert alertActive">ERROR: ' . $BandcampMsg->error . '</p>';
 }
+//hongong at webafrica dot org dot za
+//26-Mar-2009 08:52
+//http://www.php.net/manual/en/function.strip-tags.php#89878
+function strip_cdata($string)
+{
+    preg_match_all('/<!\[cdata\[(.*?)\]\]>/is', $string, $matches);
+    return str_replace($matches[0], $matches[1], $string);
+} 
 
 ?>

@@ -91,7 +91,7 @@ img {
 	width:200%;
 	position:relative;
 	left:200px;
-	background:#fff;    	/* Centre column background colour */
+	/*background:#fff; */   	/* Centre column background colour */
 }
 #colright {
 	float:left;

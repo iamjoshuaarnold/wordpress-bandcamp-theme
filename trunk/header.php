@@ -4,7 +4,9 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
     <title>BFF</title>
-    
+
+<?php do_action('bandcamp_htmlhead'); ?>    
+
     <meta name="Description" content=""/>
     
     <link rel="shortcut icon" href="http://bandcamp.com/files/33/90/3390512577-1.jpg"/>
@@ -35,9 +37,11 @@
             
         
     
-
+<?php wp_head(); ?>
 </head>
 <body class="gecko">
+
+
 <div id="pgBd" class="yui-skin-sam">
  
 <?php do_action('bandcamp_headerimg'); ?>
